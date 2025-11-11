@@ -7,13 +7,13 @@ import os
 
 load_dotenv()
 
-mcp_server = FastMCP(
+mcp = FastMCP(
     "MCP Application",
 )
 
 client = DuckDuckGoSearchResults(output_format="list")
 
-@mcp_server.tool(name="linkedin_search", description="Search LinkedIn for professionals based on a query.")
+@mcp.tool(name="linkedin_search", description="Search LinkedIn for professionals based on a query.")
 def linkedin_search(query: str = "") -> list:
     '''  Search LinkedIn for professionals based on a query.'''
 
@@ -32,4 +32,4 @@ def linkedin_search(query: str = "") -> list:
 
 
 if __name__ == "__main__":
-    mcp_server.run("streamable-http", host="0.0.0.0", port=8080)
+    mcp.run("streamable-http", host="0.0.0.0", port=8080)
