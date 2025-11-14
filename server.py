@@ -15,7 +15,14 @@ client = DuckDuckGoSearchResults(output_format="list")
 
 @mcp.tool(name="linkedin_search", description="Search LinkedIn for professionals based on a query.")
 def linkedin_search(query: str = "") -> list:
-    '''  Search LinkedIn for professionals based on a query.'''
+    '''  Search LinkedIn for professionals based on a query. 
+         Args:
+            query (str): The search query.
+         Returns:
+            list: A list of LinkedIn profile links matching the query.   
+    '''
+
+    print(f"Received query: {query}")
 
     if query == "": return "No query provided."
 
