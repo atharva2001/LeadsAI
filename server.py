@@ -14,11 +14,11 @@ mcp = FastMCP(
 
 client = DuckDuckGoSearchResults(output_format="list")
 
-class QueryStruct(BaseModel):
-    query: str
+# class QueryStruct(BaseModel):
+#     query: str
 
 @mcp.tool(name="linkedin_search", description="Search LinkedIn for professionals based on a query.")
-def linkedin_search(query: QueryStruct) -> list:
+def linkedin_search(query: str) -> list:
     '''  Search LinkedIn for professionals based on a query. '''
 
     print(f"Received query: {query}")
